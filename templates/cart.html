@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .cart-item {
+            background: white;
+            margin: 10px auto;
+            padding: 20px;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .remove-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .back-link {
+            margin-top: 40px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #000;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            background-color: #444;
+        }
+
+        .total {
+            font-size: 20px;
+            margin-top: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Your Cart</h1>
+
+    {% if cart %}
+        {% for item in cart %}
+            <div class="cart-item">
+                <div>
+                    <strong>{{ item.name }}</strong><br>
+                    {{ item.price }}
+                </div>
+                <form action="/remove-from-cart" method="POST">
+                    <input type="hidden" name="product_name" value="{{ item.name }}">
+                    <button type="submit" class="remove-btn">Remove</button>
+                </form>
+            </div>
+        {% endfor %}
+
+        <div class="total">
+            <strong>Total: {{ total }} ₾</strong>
+        </div>
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %}
+
+    <a href="/" class="back-link">← Back to Shop</a>
+
+    {% if cart %}
+        <a href="/checkout" class="back-link" style="background-color: #28a745; margin-top: 20px;">Proceed to Checkout</a>
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %}
+
+</body>
+</html>
+

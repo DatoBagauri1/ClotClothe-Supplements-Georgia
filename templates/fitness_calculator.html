@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Fitness AI Calculator</title>
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1b1b1b;
+    color: #eee;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+  form {
+    background: #2a2a2a;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(217, 4, 41, 0.6);
+    max-width: 400px;
+    width: 100%;
+  }
+  h1 {
+    color: #d90429;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  input, select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 2px solid #d90429;
+    background: #1b1b1b;
+    color: #eee;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  input::placeholder {
+    color: #b33a3a;
+  }
+  input:focus, select:focus {
+    border-color: #ff3b3b;
+    outline: none;
+    background: #2e2e2e;
+  }
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L6 6L11 1' stroke='%23d90429' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px 8px;
+    cursor: pointer;
+  }
+  button {
+    margin-top: 25px;
+    width: 100%;
+    background-color: #e60000;
+    border: none;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 900;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(217, 4, 41, 0.7);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  button:hover {
+    background-color: #ff3b3b;
+    box-shadow: 0 8px 25px rgba(255, 59, 59, 0.9);
+  }
+  h3 {
+    margin-top: 40px;
+    font-weight: 800;
+    color: #d90429;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 8px 0;
+    color: #ccc;
+  }
+</style>
+</head>
+<body>
+  <form method="POST">
+    <h1>Fitness AI Calculator</h1>
+    <input name="height" placeholder="Height in cm" required />
+    <input name="weight" placeholder="Weight in kg" required />
+    <input name="age" placeholder="Age" required />
+    <select name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <select name="activity">
+      <option value="low">Low Activity</option>
+      <option value="medium">Medium Activity</option>
+      <option value="high">High Activity</option>
+    </select>
+    <select name="goal">
+      <option value="cut">Cut</option>
+      <option value="bulk">Bulk</option>
+      <option value="maintain">Maintain</option>
+    </select>
+    <button type="submit">Calculate</button>
+
+    {% if macros %}
+    <h3>Macro Breakdown</h3>
+    <p>Calories: {{ macros.calories }}</p>
+    <p>Protein: {{ macros.protein }} g</p>
+    <p>Fats: {{ macros.fats }} g</p>
+    <p>Carbs: {{ macros.carbs }} g</p>
+    {% endif %}
+
+    {% if advice %}
+    <h3>AI Advice</h3>
+    <p>{{ advice }}</p>
+    {% endif %}
+  </form>
+</body>
+</html>

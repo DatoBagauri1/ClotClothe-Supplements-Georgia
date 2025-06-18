@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 30px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .checkout-form {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-submit {
+            background: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-submit:hover {
+            background: #218838;
+        }
+
+        .back-link {
+            text-align: center;
+            display: block;
+            margin-top: 25px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .gift-section {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .gift-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .gift-item img {
+            width: 80px;
+            margin-right: 15px;
+            border-radius: 6px;
+        }
+
+        .gift-item label {
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .total-amount {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 10px;
+            color: green;
+        }
+
+        .flash-message {
+            text-align: center;
+            color: red;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Checkout</h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="flash-message">
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+{% if total %}
+    <div class="total-amount">
+        <strong>Total: {{ total }} ₾</strong>
+    </div>
+{% endif %}
+
+<div class="checkout-form">
+    <form action="/order-summary" method="POST">
+        <input type="text" class="form-input" name="name" placeholder="Your Name" required>
+        <input type="text" class="form-input" name="address" placeholder="Your Address" required>
+        <input type="text" class="form-input" name="phone" placeholder="Your Phone Number" required>
+        <button type="submit" class="form-submit">Submit Order</button>
+    </form>
+</div>
+
+{% if deals %}
+    <div class="gift-section">
+        <h2>🎁 Choose Your Free Gift</h2>
+        <form action="/claim-free-gift" method="POST">
+            {% for deal in deals %}
+                <div class="gift-item">
+                    <input type="radio" name="free_gift_id" value="{{ deal.id }}" required>
+                    <label>
+                        <img src="{{ deal.image }}" alt="{{ deal.name }}">
+                        <strong>{{ deal.name }}</strong> – {{ deal.desc }}
+                    </label>
+                </div>
+            {% endfor %}
+            <button type="submit" class="form-submit" style="margin-top: 10px;">Claim Gift</button>
+        </form>
+    </div>
+{% endif %}
+
+<a href="/cart" class="back-link">← Back to Cart</a>
+
+</body>
+</html>

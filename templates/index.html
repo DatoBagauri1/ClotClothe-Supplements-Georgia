@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clothe&Supplements Georgia - Gym Supplements,Vitamins & Clothes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+        
+        :root {
+            --primary-color: #e60000;
+            --secondary-color: #ffffff;
+            --text-color: #1e1e1e;
+            --bg-color: #f9f9f9;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--text-color);
+            color: var(--secondary-color);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            background: var(--secondary-color);
+            box-shadow: var(--shadow);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: var(--text-color);
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .navbar a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(to right, #ffe6e6, #fff);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: #777;
+            font-size: 0.95rem;
+        }
+
+        .product-info .price {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #cc0000;
+        }
+
+        footer {
+            background: #1e1e1e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .btn {
+    background: linear-gradient(to right, #e60000, #ff4d4d);
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(230, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    }
+
+.btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(to right, #cc0000, #ff1a1a);
+}
+
+/* Search Bar Styling */
+.search-container {
+    position: relative;
+}
+
+.search-container input {
+    padding: 10px 20px 10px 40px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    font-size: 1rem;
+    width: 250px;
+    transition: 0.3s ease;
+}
+
+.search-container input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 8px rgba(230, 0, 0, 0.2);
+}
+
+.search-container i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1rem;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+
+.search-container:hover,
+.search-container:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(230, 0, 0, 0.2);
+}
+
+.search-container input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    flex-grow: 1;
+    border-radius: 30px;
+}
+
+.search-container button {
+    background: linear-gradient(to right, #e60000, #ff4d4d);
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-container button:hover {
+    background: linear-gradient(to right, #cc0000, #ff1a1a);
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+
+.search-container:hover,
+.search-container:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(230, 0, 0, 0.2);
+}
+
+.search-container input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    flex-grow: 1;
+    border-radius: 30px;
+}
+
+.search-container button {
+    background: linear-gradient(to right, #e60000, #ff4d4d);
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-container button:hover {
+    background: linear-gradient(to right, #cc0000, #ff1a1a);
+}
+.cart-button-container{
+            background-color: var(--primary-color);
+            color: rgb(85, 20, 20);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+            text-align: center;
+        
+    
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Clothe&Supplements Georgia</h1>
+        <p>Your Trusted Source for Premium Products</p>
+    </header>
+
+    <div class="navbar">
+        <a href="/" class="btn">Home</a>
+        <a href="/vitamins" class="btn">Vitamins & Minerals</a>
+        <a href="/clothes" class="btn">Clothes</a>
+        <div class="search-container">
+            <form method="GET" action="/" style="display: inline-block;">
+                <input type="text" name="q" placeholder="Search for a product..." value="{{ request.args.get('q') or '' }}">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        {% if session.get('user') %}
+        <div>
+            Logged in as {{ session['user'] }}
+            <a href="/logout" class="btn">Logout</a>
+        </div>
+        {% else %}
+        <div>
+            <a href="/login" class="btn">Login</a>
+            <a href="/signup" class="btn">Signup</a>
+        </div>
+        {% endif %}
+    </div>
+
+
+    <h2 style="text-align: center; margin-top: 30px;">Not sure what supplements you need?</h2>
+    <p style="text-align: center;">Use our free AI coach to calculate your exact needs based on your body and goals!</p>
+
+
+    <a href="/fitness-calculator" style="text-decoration: none;">
+ <div style="text-align: center;">
+  <button style="
+    margin-top: 30px;
+    background-color: #d90429;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(217, 4, 41, 0.5);
+    transition: all 0.3s ease;
+  ">
+    🧠 Open Fitness AI Calculator
+  </button>
+</div>
+</a>
+  
+
+
+
+
+
+
+    <h2 style="text-align:center; padding: 30px;">Our Top Products</h2>
+    <div class="special-deals">
+    <div class="product-grid">
+        {% for product in products %}
+        <div class="product">
+            <a href="/product/{{ loop.index0 }}" style="text-decoration: none; color: inherit;">
+                <img src="{{ product.image }}" alt="{{ product.name }}">
+                <h3>{{ product.name }}</h3>
+            </a>
+            <p>{{ product.desc }}</p>
+            <div class="price">{{ product.price }} GEL</div>
+            <form action="/add-to-cart" method="POST">
+                <input type="hidden" name="product_name" value="{{ product.name }}">
+                <input type="hidden" name="product_price" value="{{ product.price }}">
+                <button type="submit" class="btn">Add to Cart</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+    
+
+    <h2 style="text-align: center; margin-top: 40px;">🔥 Special Deals</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 20px;">
+    {% for deal in special_deals %}
+        <div style="border: 1px solid #ccc; border-radius: 10px; width: 250px; padding: 15px; text-align: center; background-color: #fefefe; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <img src="{{ deal.image }}" alt="{{ deal.name }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+            <h3 style="margin: 10px 0 5px;">{{ deal.name }}</h3>
+            <p style="font-size: 14px; color: #555;">{{ deal.desc }}</p>
+            <strong style="color: #e60000; font-size: 16px;">{{ deal.price }}</strong>
+        </div>
+    {% endfor %}
+</div>
+
+    <div style="text-align: center; margin: 40px 0;">
+    <a href="/supplement-benefits" class="btn">💊 See Benefits of Supplements</a>
+    </div>
+
+
+    <div style="text-align:center; margin-top: 40px;">
+    <a href="/payments" class="btn">💳 Payment Methods & Cashback</a>
+    </div>
+
+
+    <div class="cart-button-container">
+        <a href="/cart">🛒 View Cart</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Shop. All rights reserved. <a href="#">Terms</a> | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+</body>
+
+
+</html>

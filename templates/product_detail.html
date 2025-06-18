@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 30px;
+        }
+        .product-detail {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+        .price {
+            font-size: 24px;
+            color: green;
+            margin: 15px 0;
+        }
+        .btn {
+            background: #e60000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        .btn:hover {
+            background: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-detail">
+        <img src="{{ product.image }}" alt="{{ product.name }}">
+        <h1>{{ product.name }}</h1>
+        <p>{{ product.desc }}</p>
+        <div class="price">{{ product.price }}</div>
+
+        <form action="/add-to-cart" method="POST">
+    <input type="hidden" name="product_name" value="{{ product.name }}">
+    <input type="hidden" name="product_price" value="{{ product.price }}">
+    <input type="hidden" name="product_image" value="{{ product.image }}">
+    <button type="submit" class="btn">Add to Cart</button>
+    </form>
+
+
+        <br><br>
+        <a href="/" class="btn" style="background: #333;">← Back to Shop</a>
+    </div>
+
+</body>
+</html>

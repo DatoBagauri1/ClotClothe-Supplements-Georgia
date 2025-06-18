@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Payment Methods & Cashback - BroSupps Georgia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #1e1e1e;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: #e60000;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    a.btn {
+      display: inline-block;
+      margin-top: 30px;
+      background: linear-gradient(to right, #e60000, #ff4d4d);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(230, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    a.btn:hover {
+      background: linear-gradient(to right, #cc0000, #ff1a1a);
+      transform: translateY(-2px);
+    }
+
+    section {
+      background: #fff7f7;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(230, 0, 0, 0.15);
+      max-width: 900px;
+      margin: 40px auto;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 750px;
+      margin: 0 auto 20px auto;
+      text-align: center;
+    }
+
+    .partners {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .partner {
+      text-align: center;
+      max-width: 160px;
+    }
+
+    .partner img {
+  width: 160px;        /* fixed width */
+  height: 120px;       /* fixed height */
+  margin-bottom: 10px;
+  object-fit: contain; /* or 'cover' if you want images to fill and crop */
+  border-radius: 8px;  /* optional, to soften corners */
+  background: white;   /* optional, for contrast */
+  display: block;      /* remove inline spacing issues */
+}
+
+    .partner p {
+      font-weight: 600;
+      color: #b30000;
+      margin: 0;
+    }
+
+    .promo-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 10px 15px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      border: 2px solid #e60000;
+      width: 220px;
+      max-width: 90vw;
+      margin-right: 15px;
+      outline: none;
+      transition: border-color 0.3s ease-in-out;
+    }
+
+    input[type="text"]:focus {
+      border-color: #ff4d4d;
+    }
+
+    button.promo-btn {
+      background: linear-gradient(to right, #e60000, #ff4d4d);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(230, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+    }
+
+    button.promo-btn:hover {
+      background: linear-gradient(to right, #cc0000, #ff1a1a);
+      transform: translateY(-2px);
+    }
+
+    #promoMessage {
+      margin-top: 20px;
+      font-weight: 700;
+      color: #228B22; /* green */
+      font-size: 1.15rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Payment Methods & Cashback</h1>
+
+  <section>
+    <p>
+      We accept all major payment options including Visa, MasterCard, TBC Bank, and more for your convenience.<br>
+      On qualifying purchases, enjoy a cashback reward credited back to your account. Use this cashback for future orders and save more with every purchase!
+    </p>
+
+    <p>
+      Our goal is to provide you with the best shopping experience by partnering with trusted brands and ensuring flexible, secure payment options. Below are some of our proud partners, known for their high-quality supplements:
+    </p>
+
+    <div class="partners">
+      <div class="partner">
+        <img src="data:image/webp;base64,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" alt="Optimum Nutrition" />
+        <p>Optimum Nutrition</p>
+      </div>
+
+      <div class="partner">
+        <img src="https://th.bing.com/th/id/OIP.LUGdM6SAceh89cBAXv7bBwHaHa?w=166&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" alt="Nutrex" />
+        <p>Nutrex Research</p>
+      </div>
+
+      <div class="partner">
+        <img src="https://th.bing.com/th/id/OIP.jxnuamm5lvZeU1GA7zUfDwHaEL?r=0&pid=ImgDet&w=195&h=110&c=7&dpr=1.4" alt="MuscleTech" />
+        <p>MuscleTech</p>
+      </div>
+    </div>
+
+    <p style="font-style: italic; color: #800000; margin-top: 35px;">
+      *Terms and conditions apply. Cashback rewards valid for purchases over 150 GEL.
+    </p>
+
+    <!-- Promo Code Section -->
+    <div class="promo-section">
+      <input type="text" id="promoCode" placeholder="Enter promo code for cashback" />
+      <button class="promo-btn" onclick="applyPromo()">Apply</button>
+      <div id="promoMessage"></div>
+    </div>
+  </section>
+
+  <div style="text-align:center; margin-top: 40px;">
+    <a href="/" class="btn">← Back to Home</a>
+  </div>
+
+  <script>
+    function applyPromo() {
+      const promoInput = document.getElementById('promoCode').value.trim().toLowerCase();
+      const message = document.getElementById('promoMessage');
+
+      if (promoInput === 'health') {
+        message.textContent = "Success! You will receive 5% cashback on your purchase.";
+        message.style.color = "#228B22"; // green
+      } else if (promoInput === '') {
+        message.textContent = "Please enter a promo code.";
+        message.style.color = "#b30000"; // red
+      } else {
+        message.textContent = "Invalid promo code. Try again.";
+        message.style.color = "#b30000"; // red
+      }
+    }
+  </script>
+
+</body>
+
+</html>

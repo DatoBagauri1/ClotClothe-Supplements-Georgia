@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .order-summary {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .summary-item {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .summary-total {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .btn {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: #218838;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+            display: block;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Order Summary</h1>
+
+<div class="order-summary">
+    <h2>Review Your Order</h2>
+    {% for item in cart %}
+        <div class="summary-item">
+            <span>{{ item.name }}</span>
+            <span>{{ item.price }}</span>
+        </div>
+    {% endfor %}
+    <div class="summary-total">
+        <span>Total: {{ total }} ₾</span>
+    </div>
+
+    <form action="/thank-you" method="POST">
+        <button type="submit" class="btn">Confirm Order</button>
+    </form>
+</div>
+
+<a href="/checkout" class="back-link">← Edit Order</a>
+
+</body>
+</html>
